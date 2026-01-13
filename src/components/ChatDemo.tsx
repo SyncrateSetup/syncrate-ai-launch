@@ -1,7 +1,12 @@
 import { Bot, Send, Clock, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const DEMO_WHATSAPP_URL = "https://wa.me/5511989869871?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20demonstra%C3%A7%C3%A3o";
+
 const ChatDemo = () => {
+  const handleScheduleDemo = () => {
+    window.open(DEMO_WHATSAPP_URL, "_blank");
+  };
   return (
     <section id="demo" className="section-padding relative overflow-hidden">
       {/* Background accent */}
@@ -85,7 +90,7 @@ const ChatDemo = () => {
               </div>
             </div>
 
-            <Button variant="hero" size="lg">
+            <Button variant="hero" size="lg" onClick={handleScheduleDemo}>
               <Calendar className="w-5 h-5" />
               Agendar Demonstração
             </Button>
