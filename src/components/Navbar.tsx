@@ -49,7 +49,7 @@ const Navbar = () => {
           <div className="hidden md:block">
             <Button variant="default" size="sm" onClick={handleWhatsApp}>
               <MessageCircle className="w-4 h-4" />
-              Chamar no WhatsApp
+              Contato
             </Button>
           </div>
 
