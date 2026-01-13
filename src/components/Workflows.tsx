@@ -1,4 +1,4 @@
-import { Truck, Calendar, Headphones, TrendingUp, ArrowRight } from "lucide-react";
+import { Truck, Calendar, Headphones, TrendingUp } from "lucide-react";
 
 const workflows = [
   {
@@ -33,19 +33,14 @@ const Workflows = () => {
               <span className="text-foreground">Workflows </span>
               <span className="text-gradient">prontos para usar</span>
             </h2>
-            <p className="body-lg mb-8">
+            <p className="body-lg">
               Soluções pré-construídas e testadas que você pode implementar rapidamente. 
               Personalize conforme suas necessidades e comece a automatizar em dias, não meses.
             </p>
-            
-            <div className="flex items-center gap-2 text-primary font-medium cursor-pointer group">
-              <span>Ver todas as soluções</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </div>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-4">
-            {workflows.map((workflow, index) => (
+            {workflows.map((workflow) => (
               <div
                 key={workflow.title}
                 className="group p-6 rounded-2xl card-gradient border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-1"

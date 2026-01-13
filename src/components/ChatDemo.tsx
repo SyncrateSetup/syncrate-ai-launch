@@ -1,4 +1,4 @@
-import { Bot, Send, Clock } from "lucide-react";
+import { Bot, Send, Clock, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ChatDemo = () => {
@@ -74,7 +74,7 @@ const ChatDemo = () => {
               pode transformar seu atendimento. Sem compromisso, sem cadastro.
             </p>
 
-            <div className="flex items-center gap-6 text-muted-foreground">
+            <div className="flex items-center gap-6 text-muted-foreground mb-8">
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5 text-primary" />
                 <span className="text-sm">Disponível 24/7</span>
@@ -84,6 +84,11 @@ const ChatDemo = () => {
                 <span className="text-sm">Resposta instantânea</span>
               </div>
             </div>
+
+            <Button variant="hero" size="lg">
+              <Calendar className="w-5 h-5" />
+              Agendar Demonstração
+            </Button>
           </div>
         </div>
       </div>
