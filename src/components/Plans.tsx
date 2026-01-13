@@ -13,9 +13,10 @@ const plans = [
       "Suporte por WhatsApp",
     ],
     highlighted: false,
+    whatsappUrl: "https://wa.me/5519992346425?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20B%C3%A1sico%2C%20pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F",
   },
   {
-    name: "Plano Médio",
+    name: "Plano Intermediário",
     subtitle: "Standard AI Integration",
     description: "Automação completa para atendimento ao cliente",
     features: [
@@ -26,6 +27,7 @@ const plans = [
       "Experiência personalizada do usuário",
     ],
     highlighted: true,
+    whatsappUrl: "https://wa.me/5519992346425?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Intermedi%C3%A1rio%2C%20pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F",
   },
   {
     name: "Plano Avançado",
@@ -39,14 +41,11 @@ const plans = [
       "Dashboard completo de controle e analytics",
     ],
     highlighted: false,
+    whatsappUrl: "https://wa.me/5519992346425?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Avan%C3%A7ado%2C%20pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F",
   },
 ];
 
 const Plans = () => {
-  const handleWhatsApp = () => {
-    window.open("https://wa.me/5500000000000", "_blank");
-  };
-
   return (
     <section id="plans" className="section-padding relative">
       {/* Background accent */}
@@ -65,7 +64,7 @@ const Plans = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-          {plans.map((plan, index) => (
+          {plans.map((plan) => (
             <div
               key={plan.name}
               className={`relative p-8 rounded-2xl transition-all duration-300 ${
@@ -105,7 +104,7 @@ const Plans = () => {
                 variant={plan.highlighted ? "hero" : "outline"}
                 className="w-full"
                 size="lg"
-                onClick={handleWhatsApp}
+                onClick={() => window.open(plan.whatsappUrl, "_blank")}
               >
                 <MessageCircle className="w-4 h-4" />
                 Chamar no WhatsApp

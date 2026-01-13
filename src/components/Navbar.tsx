@@ -1,12 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Menu, X } from "lucide-react";
 import { useState } from "react";
+import syncrateLogo from "@/assets/syncrate-logo.jpg";
+
+const WHATSAPP_URL = "https://wa.me/5519992346425?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20as%20automa%C3%A7%C3%B5es%21";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleWhatsApp = () => {
-    window.open("https://wa.me/5500000000000", "_blank");
+    window.open(WHATSAPP_URL, "_blank");
   };
 
   const navLinks = [
@@ -14,6 +17,7 @@ const Navbar = () => {
     { href: "#plans", label: "Planos" },
     { href: "#workflows", label: "Soluções" },
     { href: "#demo", label: "Demo" },
+    { href: WHATSAPP_URL, label: "Contato", external: true },
   ];
 
   return (
@@ -22,9 +26,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">S</span>
-            </div>
+            <img src={syncrateLogo} alt="Syncrate" className="w-8 h-8 rounded-lg object-cover" />
             <span className="font-semibold text-lg text-foreground">Syncrate</span>
           </a>
 
@@ -34,6 +36,8 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 {link.label}
@@ -45,7 +49,7 @@ const Navbar = () => {
           <div className="hidden md:block">
             <Button variant="default" size="sm" onClick={handleWhatsApp}>
               <MessageCircle className="w-4 h-4" />
-              Contato
+              Chamar no WhatsApp
             </Button>
           </div>
 
@@ -66,6 +70,8 @@ const Navbar = () => {
                 <a
                   key={link.href}
                   href={link.href}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
                   onClick={() => setIsOpen(false)}
                 >

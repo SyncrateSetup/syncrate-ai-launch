@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, ArrowRight } from "lucide-react";
 
+const WHATSAPP_URL = "https://wa.me/5519992346425?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20as%20automa%C3%A7%C3%B5es%21";
+
 const FinalCTA = () => {
   const handleWhatsApp = () => {
-    window.open("https://wa.me/5500000000000", "_blank");
+    window.open(WHATSAPP_URL, "_blank");
   };
 
   return (
