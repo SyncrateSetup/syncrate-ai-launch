@@ -43,9 +43,6 @@ const Hero = () => {
               <MessageCircle className="w-5 h-5" />
               Chamar no WhatsApp
             </Button>
-            <Button variant="heroOutline" size="xl">
-              Ver demonstração
-            </Button>
           </div>
 
           {/* Visual element */}
